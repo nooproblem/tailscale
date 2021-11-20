@@ -28,7 +28,7 @@ func TestGetState(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	if !st.EqualFiltered(st2, FilterAll) {
+	if !st.EqualFiltered(st2, UseAllInterfaces, UseAllIPs) {
 		// let's assume nobody was changing the system network interfaces between
 		// the two GetState calls.
 		t.Fatal("two States back-to-back were not equal")
